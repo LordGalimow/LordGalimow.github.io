@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rendelés és Szállítás - Klemi Szerelékek Műhelye</title>
+    <style>
+        :root {
+            --primary-color: #1b4332; /* Horgászzöld */
+            --secondary-color: #081c15;
+            --accent-color: #d4a373; /* Prémium réz */
+            --text-dark: #212529;
+            --bg-light: #f8f9fa;
+            --card-bg: #ffffff;
+        }
+
+        body { font-family: 'Segoe UI', sans-serif; background-color: var(--bg-light); color: var(--text-dark); margin: 0; padding: 0; line-height: 1.6; }
+        
+        /* Navigációs sáv */
+        nav { background-color: var(--secondary-color); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--accent-color); }
+        .logo { color: white; font-weight: 700; font-size: 1.3rem; text-transform: uppercase; letter-spacing: 1px; }
+        .logo span { color: var(--accent-color); }
+        nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 1.5rem; }
+        nav a { color: #adb5bd; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: color 0.2s; }
+        nav a:hover, nav a.active { color: white; }
+
+        /* Oldal fejléc */
+        .page-header { background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%); color: white; text-align: center; padding: 3rem 1rem; border-bottom: 4px solid var(--accent-color); }
+        .page-header h1 { margin: 0; font-size: 2.2rem; text-transform: uppercase; }
+
+        /* Tartalom */
+        .content-container { max-width: 800px; margin: 3rem auto; padding: 0 1.5rem; }
+        .info-block { background: var(--card-bg); border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.06); padding: 2.5rem; margin-bottom: 2rem; border: 1px solid #eef0f2; }
+        .info-block h2 { color: var(--primary-color); margin-top: 0; border-bottom: 2px solid #e9ecef; padding-bottom: 0.5rem; }
+        
+        .steps { padding-left: 1.2rem; }
+        .steps li { margin-bottom: 1rem; font-weight: 500; }
+        .steps span { font-weight: normal; color: #495057; display: block; margin-top: 0.2rem; }
+
+        .szallitas-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1.5rem; }
+        @media (max-width: 600px) { .szallitas-grid { grid-template-columns: 1fr; } }
+        
+        .szallitas-box { background: #f8f9fa; border-left: 4px solid var(--accent-color); padding: 1.2rem; border-radius: 0 8px 8px 0; }
+        .szallitas-box h3 { margin: 0 0 0.5rem 0; color: var(--secondary-color); }
+        .ar { font-weight: bold; color: var(--primary-color); font-size: 1.1rem; }
+
+        footer { background-color: var(--secondary-color); color: #adb5bd; text-align: center; padding: 2rem 1rem; font-size: 0.9rem; border-top: 4px solid var(--accent-color); margin-top: 5rem; }
+        footer a { color: var(--accent-color); text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <!-- MENÜ -->
+    <nav>
+        <div class="logo">Klemi<span>Tackles</span></div>
+        <ul>
+            <li><a href="index.html">Főoldal</a></li>
+            <li><a href="termekek.html">Szerelékek</a></li>
+            <li><a href="rolam.html">Rólam</a></li>
+            <li><a href="rendeles.html" class="active">Rendelés</a></li>
+        </ul>
+    </nav>
+
+    <!-- OLDAL FEJLÉC -->
+    <div class="page-header">
+        <h1>Rendelés és Szállítási információk</h1>
+    </div>
+
+    <div class="content-container">
+        
+        <!-- HOGYAN MŰKÖDIK -->
+        <div class="info-block">
+            <h2>A rendelés menete</h2>
+            <p>Mivel minden szerelék egyedileg, kézzel készül a műhelyemben, a rendelés leadása rendkívül egyszerű és személyes:</p>
+            <ol class="steps">
+                <li>Válaszd ki a terméket: <span>Keresd meg a neked megfelelő szereléket a <a href="termekek.html">Szerelékek</a> menüpontban.</span></li>
+                <li>Kattints a gombra: <span>A gomb megnyomásával automatikusan megnyílik a levelezőprogramod egy előre kitöltött rendelési sablonnal.</span></li>
+                <li>Add meg az adataidat: <span>Írd be a sablonba, hogy hány darabot kérsz, illetve add meg a nevedet, telefonszámodat és a szállítási címet.</span></li>
+                <li>Visszaigazolás: <span>24 órán belül válaszolok az e-mailedre, amiben megerősítem a rendelést és megírom a csomag feladásának pontos idejét.</span></li>
+            </ol>
+        </div>
+
+        <!-- SZÁLLÍTÁSI MÓDOK -->
+        <div class="info-block">
+            <h2>Szállítási lehetőségek és Árak</h2>
+            <p>A megrendelt termékeket biztonságos, ütésálló csomagolásban adom fel, hogy a kosarak és horgok sérülésmentesen érkezzenek meg hozzád.</p>
+            
+            <div class="szallitas-grid">
+                <div class="szallitas-box">
+                    <h3>🦊 Foxpost Automata</h3>
+                    <p>Gyors és kényelmes. A csomagot az általad választott automatában veheted át.</p>
+                    <span class="ar">Ár: kb. 1 100 Ft-tól</span>
+                </div>
+                <div class="szallitas-box">
+                    <h3>📦 MPL Házhozszállítás</h3>
+                    <p>A Magyar Posta futárja közvetlenül az otthonodba vagy a munkahelyedre viszi a csomagot.</p>
+                    <span class="ar">Ár: kb. 2 000 Ft-tól</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- FIZETÉS ÉS GARANCIA -->
+        <div class="info-block">
+            <h2>Fizetés és Garancia</h2>
+            <h3>💰 Fizetés utánvéttel</h3>
+            <p>Nem kell előre utalnod semmit. A teljes összeget (termékek + szállítási díj) a csomag átvételekor kell kifizetned a futárnál vagy a Foxpost automatánál bankkártyával/készpénzzel.</p>
+            
+            <h3>🤝 Klemi-féle Kézműves Garancia</h3>
+            <p>Ha bármelyik szerelékemmel kapcsolatban kifogásod merülne fel, vagy úgy érzed, a kötés nem 100%-os, csak írj egy e-mailt, és kérdés nélkül kicserélem a terméket, vagy visszafizetem az árát. A horgásztársak elégedettsége nálam az első.</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2026 Klemi Szerelékek Műhelye. | Biztonságos utánvételes szállítás belföldön.</p>
+        <p>Kapcsolat: <a href="mailto:klemi.tackles@gmail.com">klemi.tackles@gmail.com</a></p>
+    </footer>
+
+</body>
+</html>
