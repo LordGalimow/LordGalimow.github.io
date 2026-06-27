@@ -42,6 +42,7 @@
         .termek-kartya:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.12); border-color: var(--accent-color); }
         .termek-info { padding: 2rem; }
         .termek-tag { display: inline-block; background-color: #d8f3dc; color: var(--primary-color); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; padding: 0.3rem 0.8rem; border-radius: 20px; margin-bottom: 1rem; }
+        .termek-tag.heavy { background-color: #fde2e4; color: #b7094c; } /* Külön szín a nehéz kosárnak */
         .termek-nev { font-size: 1.4rem; color: var(--secondary-color); margin: 0 0 0.8rem 0; font-weight: 600; }
         .termek-leiras { color: #495057; font-size: 0.95rem; line-height: 1.5; min-height: 70px; margin-bottom: 1.5rem; }
         .termek-ar-box { border-top: 1px dashed #dee2e6; padding-top: 1rem; display: flex; align-items: center; justify-content: space-between; }
@@ -71,6 +72,7 @@
     </div>
 
     <div class="container">
+        <!-- 1. TERMÉK KÁRTYA -->
         <div class="termek-kartya">
             <div class="termek-info">
                 <span class="termek-tag">Method Feeder</span>
@@ -82,6 +84,20 @@
                 </div>
             </div>
             <a href="flat-method-szerelek.html" class="reszletek-gomb">Részletek és Rendelés →</a>
+        </div>
+        
+        <!-- 2. ÚJ TERMÉK KÁRTYA -->
+        <div class="termek-kartya">
+            <div class="termek-info">
+                <span class="termek-tag heavy">Heavy Feeder / Nagyhalas</span>
+                <h2 class="termek-nev">Nagyhalas Bordáskosár Szerelék (80g)</h2>
+                <p class="termek-leiras">Masszív, 80 grammos bordás kosárral szerelt prémium rig. Ideális folyóvízre, nagy távolságokra és kapitális pontyok, amurok horgászatához.</p>
+                <div class="termek-ar-box">
+                    <span class="ar-cimke">Ár:</span>
+                    <div class="termek-ar">1 250 Ft</div> <!-- Az árat írd át nyugodtan, ha más! -->
+                </div>
+            </div>
+            <a href="bordaskosar-80g.html" class="reszletek-gomb">Részletek és Rendelés →</a>
         </div>
     </div>
 
