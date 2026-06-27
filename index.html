@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5BW8Z3CKTP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-5BW8Z3CKTP');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Klemi Kész Szerelékek Műhelye</title>
+    <title>Klemi Szerelékek Műhelye - Prémium Kész Szerelékek</title>
     <style>
         :root {
-            --primary-color: #1b4332; /* Horgászzöld */
+            --primary-color: #1b4332;
             --secondary-color: #081c15;
-            --accent-color: #d4a373; /* Prémium réz */
+            --accent-color: #d4a373;
             --text-dark: #212529;
             --bg-light: #f8f9fa;
             --card-bg: #ffffff;
@@ -16,49 +26,44 @@
 
         body { font-family: 'Segoe UI', sans-serif; background-color: var(--bg-light); color: var(--text-dark); margin: 0; padding: 0; line-height: 1.6; }
         
-        /* Navigációs sáv */
         nav { background-color: var(--secondary-color); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--accent-color); }
-        .logo { color: white; font-weight: 700; font-size: 1.3rem; text-transform: uppercase; letter-spacing: 1px; }
+        
+        /* Kattintható logó stílusa aláhúzás nélkül */
+        .logo { color: white; font-weight: 700; font-size: 1.3rem; text-transform: uppercase; letter-spacing: 1px; text-decoration: none; }
         .logo span { color: var(--accent-color); }
+        
         nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 1.5rem; }
         nav a { color: #adb5bd; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: color 0.2s; }
         nav a:hover, nav a.active { color: white; }
 
-        /* Hero (Fő fejléc) */
-        .hero { background: linear-gradient(135deg, rgba(8,28,21,0.9) 0%, rgba(27,67,50,0.8) 100%); color: white; text-align: center; padding: 5rem 1rem; }
-        .hero h1 { margin: 0; font-size: 3rem; text-transform: uppercase; letter-spacing: 1px; }
-        .hero p { font-size: 1.2rem; color: #b7e4c7; font-style: italic; margin: 1rem 0 2rem 0; }
-        .cta-btn { background-color: var(--accent-color); color: var(--secondary-color); padding: 0.8rem 2rem; font-weight: 700; text-decoration: none; border-radius: 4px; text-transform: uppercase; transition: all 0.2s; }
-        .cta-btn:hover { background-color: white; transform: scale(1.05); }
+        .hero { background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%); color: white; text-align: center; padding: 6rem 1rem; border-bottom: 4px solid var(--accent-color); }
+        .hero h1 { margin: 0 0 1rem 0; font-size: 2.8rem; text-transform: uppercase; letter-spacing: 1px; }
+        .hero p { font-size: 1.2rem; max-width: 600px; margin: 0 auto 2.5rem auto; color: #adb5bd; }
+        .cta-gomb { display: inline-block; background-color: var(--accent-color); color: var(--secondary-color); text-decoration: none; padding: 0.9rem 2.5rem; font-weight: 700; text-transform: uppercase; font-size: 0.95rem; border-radius: 4px; transition: all 0.2s; }
+        .cta-gomb:hover { background-color: white; color: var(--secondary-color); }
 
-        /* Bemutatkozó szekció */
-        .intro-section { max-width: 800px; margin: 4rem auto; padding: 0 1.5rem; text-align: center; }
-        .intro-section h2 { color: var(--primary-color); font-size: 2rem; }
-        .divider { width: 60px; height: 3px; background-color: var(--accent-color); margin: 1rem auto 2rem auto; }
+        /* A három fő tényező szekciója */
+        .features-section { max-width: 1200px; margin: 5rem auto; padding: 0 1.5rem; text-align: center; }
+        .features-section h2 { color: var(--secondary-color); font-size: 2rem; margin-bottom: 3.5rem; text-transform: uppercase; position: relative; display: inline-block; padding-bottom: 0.8rem; }
+        .features-section h2::after { content: ''; position: absolute; bottom: 0; left: 25%; width: 50%; height: 3px; background-color: var(--accent-color); }
+        
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; }
+        
+        /* Modern kártya elrendezés */
+        .feature-card { background: var(--card-bg); padding: 3rem 2rem; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); border: 1px solid #eef0f2; border-top: 4px solid var(--primary-color); transition: transform 0.3s ease, box-shadow 0.3s ease; text-align: left; }
+        .feature-card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0,0,0,0.08); border-top-color: var(--accent-color); }
+        
+        .feature-subtitle { font-size: 0.8rem; font-weight: 800; color: var(--accent-color); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.6rem; display: block; }
+        .feature-card h3 { margin: 0 0 1.2rem 0; color: var(--secondary-color); font-size: 1.4rem; font-weight: 600; }
+        .feature-card p { margin: 0; color: #495057; font-size: 0.95rem; line-height: 1.6; }
 
-        /* Kiemelt előnyök */
-        .features { background-color: white; padding: 4rem 1rem; border-y: 1px solid #e9ecef; }
-        .features-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
-        .feature-item { text-align: center; padding: 1.5rem; }
-        .feature-item h3 { color: var(--primary-color); margin-top: 0; }
-
-        footer { background-color: var(--secondary-color); color: #adb5bd; text-align: center; padding: 2rem 1rem; font-size: 0.9rem; border-top: 4px solid var(--accent-color); }
+        footer { background-color: var(--secondary-color); color: #adb5bd; text-align: center; padding: 2rem 1rem; font-size: 0.9rem; border-top: 4px solid var(--accent-color); margin-top: 6rem; }
     </style>
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5BW8Z3CKTP"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-5BW8Z3CKTP');
-</script>
 <body>
 
-    <!-- MENÜ -->
     <nav>
-        <div class="logo">Klemi<span>Tackles</span></div>
+        <a href="index.html" class="logo">Klemi<span>Tackles</span></a>
         <ul>
             <li><a href="index.html" class="active">Főoldal</a></li>
             <li><a href="termekek.html">Szerelékek</a></li>
@@ -67,40 +72,35 @@
         </ul>
     </nav>
 
-    <!-- HERO SECTION -->
     <div class="hero">
-        <h1>Precíziós Kész Szerelékek</h1>
-        <p>Hogy neked a vízparton már csak a fárasztással kelljen foglalkoznod.</p>
-        <a href="termekek.html" class="cta-btn">Megnézem a kínálatot</a>
+        <h1>Klemi Szerelékek Műhelye</h1>
+        <p>Prémium minőségű, kézzel kötött horgász szerelékek közvetlenül a készítőtől.</p>
+        <a href="termekek.html" class="cta-gomb">Megtekintem a szerelékeket</a>
     </div>
 
-    <!-- BEMUTATKOZÁS -->
-    <div class="intro-section">
-        <h2>Szia, Klemi vagyok!</h2>
-        <div class="divider"></div>
-        <p>Évek óta megszállottan kötöm a különböző feeder, method és bojlis szerelékeket. Tapasztalatból tudom, hogy a siker sokszor a millimétereken és a tökéletes csomókon múlik. Minden egyes szereléket saját kezűleg, mikroszkopikus pontossággal készítek el neked, kizárólag olyan prémium alapanyagokból, amikkel én magam is horgászom.</p>
-    </div>
-
-    <!-- MIÉRT TŐLEM? -->
-    <div class="features">
+    <div class="features-section">
+        <h2>A műhely alapelvei</h2>
         <div class="features-grid">
-            <div class="feature-item">
-                <h3>Tesztelt Csomók</h3>
-                <p>Nincs több elfüstölt zsinór vagy kibomló kötés. Minden darabot szakítópróbának vetek alá a csomagolás előtt.</p>
+            <div class="feature-card">
+                <span class="feature-subtitle">Garantált minőség</span>
+                <h3>Kézműves precizitás</h3>
+                <p>Minden egyes szerelék milliméteres pontossággal, kézzel készül. Nincs tömeggyártás, csak gondosan ellenőrzött csomók és prémium alapanyagok.</p>
             </div>
-            <div class="feature-item">
-                <h3>Prémium Alapanyagok</h3>
-                <p>Csak a leghegyesebb horgok, prémium bevonatos fonott zsinórok és megbízható gubancgátló rendszerek kerülnek a műhelyből a táskádba.</p>
+            <div class="feature-card">
+                <span class="feature-subtitle">Azonnali hatékonyság</span>
+                <h3>Tesztelt konstrukciók</h3>
+                <p>Csak olyan összeállításokat találsz a kínálatban, amelyek éles helyzetben, vadvizeken és intenzív tavakon is bizonyították már kiváló fogósságukat.</p>
             </div>
-            <div class="feature-item">
-                <h3>Időmegtakarítás</h3>
-                <p>Felejtsd el a lámpafénynél való gubancolást a sátorban. Csak akaszd fel a kész riget, és már repülhet is be a tuti helyre!</p>
+            <div class="feature-card">
+                <span class="feature-subtitle">Rugalmas kiszolgálás</span>
+                <h3>Személyre szabott készítés</h3>
+                <p>Bármilyen egyedi igényed van horogméret, előkehossz vagy kosársúly terén, rugalmasan elkészítem neked a tökéletes végszereléket.</p>
             </div>
         </div>
     </div>
 
     <footer>
-        <p>© 2026 Klemi Szerelékek Műhelye. | Kézzel kötött garancia.</p>
+        <p>© 2026 Klemi Szerelékek Műhelye.</p>
     </footer>
 
 </body>
