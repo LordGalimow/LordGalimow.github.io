@@ -3,64 +3,233 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LordGalimow Horgász Bolt</title>
+    <title>LordGalimow Premium Carp & Feeder Tackles</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; color: #333; margin: 0; padding: 0; }
-        header { background-color: #2c3e50; color: white; text-align: center; padding: 2.5rem 1rem; }
-        header h1 { margin: 0; font-size: 2.5rem; }
-        .container { max-width: 1100px; margin: 2rem auto; padding: 0 1rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-        .termek-kartya { background: white; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s; }
-        .termek-kartya:hover { transform: translateY(-5px); }
-        .termek-info { padding: 1.5rem; }
-        .termek-nev { font-size: 1.4rem; color: #2c3e50; margin: 0 0 0.5rem 0; }
-        .termek-leiras { color: #666; font-size: 0.95rem; line-height: 1.4; min-height: 60px; }
-        .termek-ar { font-size: 1.6rem; font-weight: bold; color: #16a085; margin: 1rem 0; }
-        .vasarlas-gomb { display: block; text-align: center; background-color: #27ae60; color: white; text-decoration: none; padding: 0.8rem; font-weight: bold; border-top: 1px solid #eef2f3; transition: background 0.2s; }
-        .vasarlas-gomb:hover { background-color: #219653; }
-        footer { text-align: center; padding: 2rem; color: #7f8c8d; font-size: 0.9rem; }
+        :root {
+            --primary-color: #1e3f20; /* Mély horgász zöld */
+            --secondary-color: #142816;
+            --accent-color: #d4a373; /* Prémium réz/arany részletekhez */
+            --text-dark: #2b2d42;
+            --bg-light: #f8f9fa;
+            --card-bg: #ffffff;
+            --success-color: #27ae60;
+        }
+
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: var(--bg-light); 
+            color: var(--text-dark); 
+            margin: 0; 
+            padding: 0; 
+            line-height: 1.6;
+        }
+
+        header { 
+            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+            color: white; 
+            text-align: center; 
+            padding: 4rem 1rem; 
+            border-bottom: 4px solid var(--accent-color);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        header h1 { 
+            margin: 0; 
+            font-size: 2.8rem; 
+            letter-spacing: 1px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        header p {
+            margin: 0.5rem 0 0 0;
+            font-size: 1.2rem;
+            color: #b5c4b1;
+            font-style: italic;
+        }
+
+        .notice-banner {
+            background-color: #e2ecc8;
+            color: #2b4c1f;
+            text-align: center;
+            padding: 0.8rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border-bottom: 1px solid #c2d59b;
+        }
+
+        .container { 
+            max-width: 1200px; 
+            margin: 3rem auto; 
+            padding: 0 1.5rem; 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 2.5rem; 
+        }
+
+        .termek-kartya { 
+            background: var(--card-bg); 
+            border-radius: 12px; 
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06); 
+            overflow: hidden; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: space-between; 
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border: 1px solid #eef0f2;
+        }
+
+        .termek-kartya:hover { 
+            transform: translateY(-8px); 
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+            border-color: var(--accent-color);
+        }
+
+        .termek-info { 
+            padding: 2rem; 
+        }
+
+        .termek-tag {
+            display: inline-block;
+            background-color: #e8ece9;
+            color: var(--primary-color);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .termek-nev { 
+            font-size: 1.5rem; 
+            color: var(--secondary-color); 
+            margin: 0 0 0.8rem 0; 
+            font-weight: 600;
+        }
+
+        .termek-leiras { 
+            color: #5c677d; 
+            font-size: 0.95rem; 
+            line-height: 1.5; 
+            min-height: 70px;
+            margin-bottom: 1.5rem;
+        }
+
+        .termek-ar-box {
+            border-top: 1px dashed #e2e8f0;
+            padding-top: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .ar-cimke {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .termek-ar { 
+            font-size: 1.8rem; 
+            font-weight: 700; 
+            color: var(--primary-color); 
+        }
+
+        .vasarlas-gomb { 
+            display: block; 
+            text-align: center; 
+            background-color: var(--primary-color); 
+            color: white; 
+            text-decoration: none; 
+            padding: 1.2rem; 
+            font-weight: bold; 
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.95rem;
+            transition: background 0.2s; 
+        }
+
+        .vasarlas-gomb:hover { 
+            background-color: var(--success-color); 
+        }
+
+        footer { 
+            background-color: var(--secondary-color);
+            color: #a0aec0;
+            text-align: center; 
+            padding: 3rem 1rem; 
+            font-size: 0.9rem; 
+            margin-top: 5rem;
+            border-top: 4px solid var(--accent-color);
+        }
+
+        footer p { margin: 0.5rem 0; }
+        footer a { color: var(--accent-color); text-decoration: none; }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Profi Horgász Szerelékek Boltja</h1>
-        <p>Kézzel kötött szerelékek és minőségi aprócikkek közvetlenül LordGalimow-tól</p>
+        <h1>LordGalimow Premium Tackles</h1>
+        <p>Kézzel készített, tesztelt pontyozó és feeder felszerelések horgászoktól horgászoknak</p>
     </header>
+
+    <div class="notice-banner">
+        🎣 Rendelés leadása egyszerűen: Kattints a gombra, és küldd el az automatikusan generált e-mailt!
+    </div>
 
     <div class="container">
         <!-- 1. TERMÉK -->
         <div class="termek-kartya">
             <div class="termek-info">
+                <span class="termek-tag">Kész Rigek / Szerelékek</span>
                 <h2 class="termek-nev">Prémium Method Feeder Szerelék</h2>
-                <p class="termek-leiras">Készre szerelt, gubancgátló gumicsővel, 35g-os flat kosárral és 10-es méretű szakáll nélküli horoggal, csalitüskével.</p>
-                <div class="termek-ar">1 490 Ft</div>
+                <p class="termek-leiras">Tökéletesen balanszírozott, gubancgátló gumicsővel ellátott flat kosaras szerelék. 35g-os kosárral, 10-es méretű szakáll nélküli horoggal és 10mm-es csalitüskével szerelve.</p>
+                <div class="termek-ar-box">
+                    <span class="ar-cimke">Fogyasztói ár:</span>
+                    <div class="termek-ar">1 490 Ft</div>
+                </div>
             </div>
-            <a href="mailto:LordGalimow@gmail.com?subject=Rendelés: Method Feeder Szerelék" class="vasarlas-gomb">Megrendelés e-mailben</a>
+            <!-- Az alábbi link automatikusan kitölti az e-mail tárgyát és szövegét a megrendelő adataival -->
+            <a href="mailto:LordGalimow@gmail.com?subject=MEGRENDELÉS: Prémium Method Feeder Szerelék&body=Tisztelt LordGalimow!%0A%0ASzeretném megrendelni a következő terméket:%0A- Termék: Prémium Method Feeder Szerelék (1 490 Ft)%0A%0A Kérlek, küldd el a következő címre (utánvéttel):%0A- Név:%0A- Postázási cím (Irányítószám, Város, Utca, Házszám):%0A- Telefonszám:%0A%0AKöszönöm!" class="vasarlas-gomb">🛒 Kosárba teszem</a>
         </div>
 
         <!-- 2. TERMÉK -->
         <div class="termek-kartya">
             <div class="termek-info">
-                <h2 class="termek-nev">Gubancgátló Gumicső Készlet (5 db)</h2>
-                <p class="termek-leiras">30 cm hosszú, sötétzöld, nehezített gumicsövek feeder és bojlis szerelékekhez. Maximális rejtőzködés az iszapban.</p>
-                <div class="termek-ar">890 Ft</div>
+                <span class="termek-tag">Aprócikk</span>
+                <h2 class="termek-nev">Nehezített Gubancgátló Cső (5 db)</h2>
+                <p class="termek-leiras">30 cm hosszú, sötétzöld színű, extra nehéz gumicsövek. Tökéletesen rásimul a mederfenékre, így a legóvatosabb pontyok sem gyanakodnak. Megvédi a főzsinórt.</p>
+                <div class="termek-ar-box">
+                    <span class="ar-cimke">Fogyasztói ár:</span>
+                    <div class="termek-ar">890 Ft</div>
+                </div>
             </div>
-            <a href="mailto:LordGalimow@gmail.com?subject=Rendelés: Gumicső Készlet" class="vasarlas-gomb">Megrendelés e-mailben</a>
+            <a href="mailto:LordGalimow@gmail.com?subject=MEGRENDELÉS: Nehezített Gubancgátló Cső (5 db)&body=Tisztelt LordGalimow!%0A%0ASzeretném megrendelni a következő terméket:%0A- Termék: Nehezített Gubancgátló Cső (5 db) (890 Ft)%0A%0A Kérlek, küldd el a következő címre (utánvéttel):%0A- Név:%0A- Postázási cím (Irányítószám, Város, Utca, Házszám):%0A- Telefonszám:%0A%0AKöszönöm!" class="vasarlas-gomb">🛒 Kosárba teszem</a>
         </div>
 
         <!-- 3. TERMÉK -->
         <div class="termek-kartya">
             <div class="termek-info">
+                <span class="termek-tag">Etetőkosarak</span>
                 <h2 class="termek-nev">Távdobó Bordás Kosár (45g)</h2>
-                <p class="termek-leiras">Speciális áramvonalas kialakítás a nagy távolságok eléréséhez. Beépített forgóvédő gumi hüvellyel.</p>
-                <div class="termek-ar">1 190 Ft</div>
+                <p class="termek-leiras">Speciális, áramvonalas ólomkialakítás a kiemelkedő dobástávolságokért. Beépített puha forgóvédő gumi hüvellyel a zsinór védelme érdekében.</p>
+                <div class="termek-ar-box">
+                    <span class="ar-cimke">Fogyasztói ár:</span>
+                    <div class="termek-ar">1 190 Ft</div>
+                </div>
             </div>
-            <a href="mailto:LordGalimow@gmail.com?subject=Rendelés: Bordás Kosár" class="vasarlas-gomb">Megrendelés e-mailben</a>
+            <a href="mailto:LordGalimow@gmail.com?subject=MEGRENDELÉS: Távdobó Bordás Kosár (45g)&body=Tisztelt LordGalimow!%0A%0ASzeretném megrendelni a következő terméket:%0A- Termék: Távdobó Bordás Kosár (45g) (1 190 Ft)%0A%0A Kérlek, küldd el a következő címre (utánvéttel):%0A- Név:%0A- Postázási cím (Irányítószám, Város, Utca, Házszám):%0A- Telefonszám:%0A%0AKöszönöm!" class="vasarlas-gomb">🛒 Kosárba teszem</a>
         </div>
     </div>
 
     <footer>
-        <p>© 2026 LordGalimow Shop. Minden jog fenntartva. | Rendelésedet e-mailben fogadjuk, a szállítás részleteit válaszban egyeztetjük.</p>
+        <p><strong>© 2026 LordGalimow Premium Tackles.</strong> Minden jog fenntartva.</p>
+        <p>A rendelések feldolgozása 24 órán belül megtörténik. A szállítás MPL utánvéttel vagy Foxposttal kérhető.</p>
+        <p>Kérdésed van? Írj nekünk: <a href="mailto:LordGalimow@gmail.com">LordGalimow@gmail.com</a></p>
     </footer>
 
 </body>
