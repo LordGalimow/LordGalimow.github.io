@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rólam - Klemi Szerelékek Műhelye</title>
+    <style>
+        :root {
+            --primary-color: #1b4332; /* Horgászzöld */
+            --secondary-color: #081c15;
+            --accent-color: #d4a373; /* Prémium réz */
+            --text-dark: #212529;
+            --bg-light: #f8f9fa;
+            --card-bg: #ffffff;
+        }
+
+        body { font-family: 'Segoe UI', sans-serif; background-color: var(--bg-light); color: var(--text-dark); margin: 0; padding: 0; line-height: 1.6; }
+        
+        /* Navigációs sáv */
+        nav { background-color: var(--secondary-color); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--accent-color); }
+        .logo { color: white; font-weight: 700; font-size: 1.3rem; text-transform: uppercase; letter-spacing: 1px; }
+        .logo span { color: var(--accent-color); }
+        nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 1.5rem; }
+        nav a { color: #adb5bd; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: color 0.2s; }
+        nav a:hover, nav a.active { color: white; }
+
+        /* Oldal fejléc */
+        .page-header { background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%); color: white; text-align: center; padding: 3rem 1rem; border-bottom: 4px solid var(--accent-color); }
+        .page-header h1 { margin: 0; font-size: 2.2rem; text-transform: uppercase; }
+
+        /* Tartalom */
+        .content-container { max-width: 800px; margin: 3rem auto; padding: 0 1.5rem; }
+        .info-block { background: var(--card-bg); border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.06); padding: 2.5rem; margin-bottom: 2rem; border: 1px solid #eef0f2; }
+        .info-block h2 { color: var(--primary-color); margin-top: 0; border-bottom: 2px solid #e9ecef; padding-bottom: 0.5rem; }
+        
+        .motto { font-size: 1.2rem; font-style: italic; color: var(--primary-color); border-left: 4px solid var(--accent-color); padding-left: 1rem; margin: 1.5rem 0; }
+        
+        .anyagok-list { list-style-type: square; padding-left: 1.2rem; }
+        .anyagok-list li { margin-bottom: 0.5rem; }
+
+        footer { background-color: var(--secondary-color); color: #adb5bd; text-align: center; padding: 2rem 1rem; font-size: 0.9rem; border-top: 4px solid var(--accent-color); margin-top: 5rem; }
+        footer a { color: var(--accent-color); text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <!-- MENÜ -->
+    <nav>
+        <div class="logo">Klemi<span>Tackles</span></div>
+        <ul>
+            <li><a href="index.html">Főoldal</a></li>
+            <li><a href="termekek.html">Szerelékek</a></li>
+            <li><a href="rolam.html" class="active">Rólam</a></li>
+            <li><a href="rendeles.html">Rendelés</a></li>
+        </ul>
+    </nav>
+
+    <!-- OLDAL FEJLÉC -->
+    <div class="page-header">
+        <h1>A Műhely mögött: A Klemi Story</h1>
+    </div>
+
+    <div class="content-container">
+        
+        <!-- TÖRTÉNETEM -->
+        <div class="info-block">
+            <h2>Ki áll a szerelékek mögött?</h2>
+            <p>Szia! Klemi vagyok, szenvedélyes horgász és a Klemi Tackles alapítója. A vízpart számomra nemcsak a kikapcsolódást, hanem az állandó kísérletezést és a finomhangolást jelenti. Gyerekkorom óta kísérnek a botok, és az évek alatt rájóttem egy nagyon fontos dologra:</p>
+            
+            <p class="motto">"A kapásjelző jelzése nem a szerencsén múlik, hanem a részleteken, amiket a víz alá engedsz."</p>
+            
+            <p>Sajnos sokszor tapasztaltam, hogy a boltokban kapható, tömeggyártott gyári kész szerelékek minősége ingadozó. Egy rosszul megválasztott gumi, egy pontatlan csomó vagy egy tompa horog a vágyott élet hala elvesztésébe kerülhet. Ezért kezdtem el saját magamnak, majd a barátaimnak kötni a rigeket – most pedig szeretném ezt a prémium minőséget elérhetővé tenni számodra is.</p>
+        </div>
+
+        <!-- FILOZÓFIA -->
+        <div class="info-block">
+            <h2>A Klemi Tackles ígéret</h2>
+            <p>Minden egyes darab, ami elhagyja a kis műhelyemet, az alábbi elvek szerint készül:</p>
+            <ul class="anyagok-list">
+                <li><strong>Szigorú minőségellenőrzés:</strong> Nem sietek. Ha egy kötés nem lesz 100%-os, azonnal elvágom és újrakezdem. Minden darab átmegy egy kíméletlen szakítópróbán.</li>
+                <li><strong>Csak top kategóriás alapanyagok:</strong> Nem spórolok az aprócikkeken. Kizárólag neves gyártók tűhegyes horgaival, megbízható bevonatos zsinórjaival és minőségi gubancgátló gumicsöveivel dolgozom.</li>
+                <li><strong>Gyakorlati tapasztalat:</strong> Csak olyan típusú szerelékeket találsz meg nálam, amiket én magam is rendszeresen használok, és amikkel bizonyítottan fogtam már kapitális halakat a hazai vizeken.</li>
+            </ul>
+        </div>
+
+        <!-- KAPCSOLAT -->
+        <div class="info-block">
+            <h2>Fordulj hozzám bizalommal!</h2>
+            <p>Ha egyedi kérésed van (például más horogméretet szeretnél, hosszabb előkét, vagy specifikus kosársúlyt, amit nem találsz meg a termékek között), bátran írj nekem egy e-mailt! Rugalmas vagyok, és szívesen elkészítem a te egyedi "titkos fegyveredet" is.</p>
+            <p>Görbüljön a bot, találkozunk a vízparton!</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2026 Klemi Szerelékek Műhelye. | Kézzel kötött prémium minőség.</p>
+        <p>E-mail: <a href="mailto:klemi.tackles@gmail.com">klemi.tackles@gmail.com</a></p>
+    </footer>
+
+</body>
+</html>
