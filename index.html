@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LordGalimow Horgász Bolt</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; color: #333; margin: 0; padding: 0; }
+        header { background-color: #2c3e50; color: white; text-align: center; padding: 2.5rem 1rem; }
+        header h1 { margin: 0; font-size: 2.5rem; }
+        .container { max-width: 1100px; margin: 2rem auto; padding: 0 1rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .termek-kartya { background: white; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s; }
+        .termek-kartya:hover { transform: translateY(-5px); }
+        .termek-info { padding: 1.5rem; }
+        .termek-nev { font-size: 1.4rem; color: #2c3e50; margin: 0 0 0.5rem 0; }
+        .termek-leiras { color: #666; font-size: 0.95rem; line-height: 1.4; min-height: 60px; }
+        .termek-ar { font-size: 1.6rem; font-weight: bold; color: #16a085; margin: 1rem 0; }
+        .vasarlas-gomb { display: block; text-align: center; background-color: #27ae60; color: white; text-decoration: none; padding: 0.8rem; font-weight: bold; border-top: 1px solid #eef2f3; transition: background 0.2s; }
+        .vasarlas-gomb:hover { background-color: #219653; }
+        footer { text-align: center; padding: 2rem; color: #7f8c8d; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Profi Horgász Szerelékek Boltja</h1>
+        <p>Kézzel kötött szerelékek és minőségi aprócikkek közvetlenül LordGalimow-tól</p>
+    </header>
+
+    <div class="container">
+        <!-- 1. TERMÉK -->
+        <div class="termek-kartya">
+            <div class="termek-info">
+                <h2 class="termek-nev">Prémium Method Feeder Szerelék</h2>
+                <p class="termek-leiras">Készre szerelt, gubancgátló gumicsővel, 35g-os flat kosárral és 10-es méretű szakáll nélküli horoggal, csalitüskével.</p>
+                <div class="termek-ar">1 490 Ft</div>
+            </div>
+            <a href="mailto:LordGalimow@gmail.com?subject=Rendelés: Method Feeder Szerelék" class="vasarlas-gomb">Megrendelés e-mailben</a>
+        </div>
+
+        <!-- 2. TERMÉK -->
+        <div class="termek-kartya">
+            <div class="termek-info">
+                <h2 class="termek-nev">Gubancgátló Gumicső Készlet (5 db)</h2>
+                <p class="termek-leiras">30 cm hosszú, sötétzöld, nehezített gumicsövek feeder és bojlis szerelékekhez. Maximális rejtőzködés az iszapban.</p>
+                <div class="termek-ar">890 Ft</div>
+            </div>
+            <a href="mailto:LordGalimow@gmail.com?subject=Rendelés: Gumicső Készlet" class="vasarlas-gomb">Megrendelés e-mailben</a>
+        </div>
+
+        <!-- 3. TERMÉK -->
+        <div class="termek-kartya">
+            <div class="termek-info">
+                <h2 class="termek-nev">Távdobó Bordás Kosár (45g)</h2>
+                <p class="termek-leiras">Speciális áramvonalas kialakítás a nagy távolságok eléréséhez. Beépített forgóvédő gumi hüvellyel.</p>
+                <div class="termek-ar">1 190 Ft</div>
+            </div>
+            <a href="mailto:LordGalimow@gmail.com?subject=Rendelés: Bordás Kosár" class="vasarlas-gomb">Megrendelés e-mailben</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 LordGalimow Shop. Minden jog fenntartva. | Rendelésedet e-mailben fogadjuk, a szállítás részleteit válaszban egyeztetjük.</p>
+    </footer>
+
+</body>
+</html>
